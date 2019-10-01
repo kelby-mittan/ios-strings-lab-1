@@ -13,28 +13,64 @@
 
 Write code that prints out all the numbers from 1 to 10 as a single string.
 (Hint: the `String()` function can convert an Int to a String)
-
+```swift
+for i in 1...10 {
+    print(String(i), terminator: " ")
+}
+```
 ***
 ## Question 2
 
 Write code that prints out all the even numbers from 5 to 51 as a single string.
 
+```swift
+for i in 5...51 {
+    if i % 2 == 0{
+    print(String(i), terminator: " ")
+    }
+}
+```
 ***
 ## Question 3
 
 Write code that prints out every number ending in 4 between 1 and 60 as a single string.
-
+# Answer
+```swift
+for i in 1...60 {
+    if i % 10 == 4{
+    print(String(i), terminator: " ")
+    }
+}
+```
 ***
 ## Question 4
 
 Print each character in the string `"Hello world!"`
-
+# Answer
+```swift
+for char in "Hello World!" {
+print("\(char)")
+}
+```
 ***
 ## Question 5
 
 Print out the last character in the string below.  You cannot use the Character literal "!" (i.e you must access `myStringSeven`'s characters).
 
 `let myStringSeven = "Hello world!"`
+
+# Answer
+```swift
+let myStringSeven = "Hello world!"
+
+let endStringSeven = myStringSeven.endIndex
+
+let lastCharacterInSeven = myStringSeven.index(before: endStringSeven)
+
+let lastCharacterIs = myStringSeven[lastCharacterInSeven]
+
+print("last charcater in \(myStringSeven) is \(lastCharacterIs)")
+```
 
 ***
 ## Question 6
@@ -43,10 +79,39 @@ Write code that switches on a string, given the following conditions:
 - If the string's length is even, print out every character.
 - If the string's length is odd, print out every other character.
 
+# Answer
+```swift
+let myNameIs = "My name is Kelby Mittan!!"
+
+let numOfChars = myNameIs.count
+let evenChars = numOfChars % 2
+
+var letter = 0
+
+switch evenChars {
+case 0:
+    for char in myNameIs{
+    print("\(char)")
+    }
+default:
+    for (index, char) in myNameIs.enumerated() {
+        if index % 2 == 0 {
+            print(char)
+        }
+    }
+}
+```
+
 ***
 ## Question 7
 
 Initialize a String with a character. Show that it is a Character, and not another String, that you're using to initialize it.
+
+# Answer
+```swift
+let initializingC: Character = "C"
+let string = "\(initializingC)haracter initialization"
+```
 
 ***
 ## Question 8
