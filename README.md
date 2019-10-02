@@ -123,7 +123,11 @@ Build five pairs of **canonically equivalent** strings, the first of each being 
 ## Question 9
 
 **Using only Unicode**, print out `"HELLO WORLD!"`
-
+# Answer
+```swift
+let helloWorld = "\u{0048}\u{0045}\u{004C}\u{004C}\u{004F}\u{0020}\u{0057}\u{004F}\u{0052}\u{004C}\u{0044}\u{0021}"
+print(helloWorld)
+```
 ***
 ## Question 10
 
@@ -160,7 +164,6 @@ Flower Box:
 ```swift
 var flower = "| \u{2698} "
 
-print()
 for _ in  1...11 {
     print("- ", terminator: "")
 }
@@ -192,6 +195,29 @@ Chess Board:
 ♟ ♟ ♟ ♟ ♟ ♟ ♟ ♟
 ♜ ♞ ♝ ♛ ♚ ♝ ♞ ♜
 ```
+# Answer
+```swift
+let wKing = "\u{2654}" ; let bKing = "\u{265A}"
+let wQueen = "\u{2655}" ; let bQueen = "\u{265B}"
+let wRook = "\u{2656}" ; let bRook = "\u{265C}"
+let wBishop = "\u{2657}" ; let bBishop = "\u{265D}"
+let wKnight = "\u{2658}" ; let bKnight = "\u{265E}"
+let wPawn = "\u{2659}" ; let bPawn = "\u{265F}"
+
+print(wRook + wKnight + wBishop + wKing + wQueen + wBishop + wKnight + wRook)
+for _ in 1...8 {
+    print(wPawn, terminator: "")
+}
+print()
+for _ in 1...4 {
+    print()
+}
+for _ in 1...8 {
+    print(bPawn, terminator: "")
+}
+print()
+print(bRook + bKnight + bBishop + bKing + bQueen + bBishop + bKnight + bRook)
+```
 
 ***
 ## Question 14
@@ -202,14 +228,13 @@ You are given a string stored in the variable `aString`. Create new string named
 var aString = "Replace the letter e with \*"
 // Your code here
  ```
+ # Answer
+ ```swift
+ var aString = "Replace the letter e with *"
+ var replacedString = aString.replacingOccurrences(of: "e", with: "*")
 
-Example:
-
-Input:
-`var aString = "Replace the letter e with *"`
-
-Expected values:
-`replacedString = "R*plac* th* l*tt*r * with *"`
+ print(replacedString)
+```
 
 ***
 ## Question 15
@@ -229,6 +254,15 @@ Input:
 
 Output:
 `"olleH"`
+
+# Answer
+```swift
+var aString = "this string has 29 characters"
+
+var reverse = String(aString.reversed())
+
+print(reverse)
+```
 
 
 ## 16. Mad-Libs! Add a value to the declared variables below in playgrounds. Insert the variables (already in correct order) inside the stringmadLib and print. 
@@ -253,6 +287,21 @@ occasional \() by late afternoon. Wind velocity will
 be \() miles an hour, and the high temperature should
 be around \() degrees. So, if you're going out, you had
 better plan on wearing your \()".
+```
+# Answer
+```swift
+var geographicLocation: String = "New York"
+var adjective1: String = "cold"
+var pluralNoun1: String = "air"
+var adjective2: String = "high"
+var pluralNoun2: String = "rain"
+var number1: Int = 100
+var number2: Int = 55
+var articleOfClothing: String = "rain coat"
+
+var madLib = "Here is tomorrow's weather report for \(geographicLocation) and vicinity. Early tomorrow, a \(adjective1) front will collide with a mass of hot \(pluralNoun1) moving from the north. This means we can expect \(adjective2) winds and occasional \(pluralNoun2) by late afternoon. Wind velocity will be \(number1) miles an hour, and the high temperature should be around \(number2) degrees. So, if you're going out, you had better plan on wearing your \(articleOfClothing)"
+
+print(madLib)
 ```
 
 ***
