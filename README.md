@@ -13,6 +13,7 @@
 
 Write code that prints out all the numbers from 1 to 10 as a single string.
 (Hint: the `String()` function can convert an Int to a String)
+# Answer
 ```swift
 for i in 1...10 {
     print(String(i), terminator: " ")
@@ -22,7 +23,7 @@ for i in 1...10 {
 ## Question 2
 
 Write code that prints out all the even numbers from 5 to 51 as a single string.
-
+# Answer
 ```swift
 for i in 5...51 {
     if i % 2 == 0{
@@ -154,6 +155,25 @@ Flower Box:
 | ⚘ | ⚘ | ⚘ | ⚘ | ⚘ |
 | ⚘ | ⚘ | ⚘ | ⚘ | ⚘ |
 - - - - - - - - - - -
+```
+# Answer
+```swift
+var flower = "| \u{2698} "
+
+print()
+for _ in  1...11 {
+    print("- ", terminator: "")
+}
+for _ in 1...7 {
+    print("|")
+    for _ in 1...5 {
+        print(flower, terminator: "")
+    }
+}
+print()
+for _ in  1...11 {
+    print("- ", terminator: "")
+}
 ```
 
 ***
